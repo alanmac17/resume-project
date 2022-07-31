@@ -18,18 +18,6 @@
     <script type="text/javascript">
         (function () {
             emailjs.init("service_281hisn");
-            
-            var templateParams = {
-                name: 'Alan',
-                notes: 'I would like to'
-            };
-
-            emailjs.send('service_281hisn', 'rosie_api_lesson', templateParams)
-                .then(function (response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                }, function (error) {
-                    console.log('FAILED...', error);
-                });
         })();
     </script>
     <title>Rosie</title>
@@ -78,7 +66,7 @@
                 <h5 class="uppercase text-center">Let's work together!</h5>
 
                 <div class="center-form">
-                    <form>
+                    <form onsubmit="return sendMail(this);">
                         <input type="text" name="name" id="fullname" class="form-control" placeholder="Name" required />
                         <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
                             required />
@@ -158,6 +146,7 @@
             </div>
         </div>
     </footer>
+    <script src="assets/js/sendEmail.js"></script>
 </body>
 
 </html>
